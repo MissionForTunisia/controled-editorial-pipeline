@@ -1,0 +1,93 @@
+% ============================================================
+%  QUELLE SOCIÉTÉ APRÈS L'IA ?
+%  Travail, intelligence, pouvoir et société à l'ère de
+%  l'intelligence artificielle
+%
+%  S. Noussair & GLM 5.1 — S. Dhafer & Prism
+%  Format A5 · pdfLaTeX · compiles in 3 passes
+% ============================================================
+\documentclass[a5paper,11pt,twoside,openany]{book}
+
+% ------------------------------------------------ polices (avant fontenc)
+\usepackage{lmodern}
+\usepackage[scaled=0.92,lf]{FiraSans}
+
+% ------------------------------------------------ encode & langue
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{microtype}
+
+% ------------------------------------------------ composition
+\usepackage[a5paper]{geometry}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{fancyhdr}
+\usepackage[hidelinks,bookmarksnumbered=false]{hyperref}
+
+% ------------------------------------------------ design system
+\makeatletter
+\input{design/design-system.tex}
+\makeatother
+
+% ------------------------------------------------ métadonnées PDF
+\hypersetup{
+  pdftitle={QUELLE SOCIÉTÉ APRÈS L'IA ?},
+  pdfsubject={Travail, intelligence, pouvoir et société à l'ère de l'intelligence artificielle},
+  pdfauthor={S. Noussair \& GLM 5.1},
+  pdfcreator={S. Dhafer \& Prism},
+  pdfkeywords={intelligence artificielle, société, travail, pouvoir, prospective},
+  linktoc=all,
+  bookmarksopen=true,
+  bookmarksopenlevel=0,
+}
+
+% ------------------------------------------------ réglages fins
+\setlength{\parindent}{1.35em}
+\setlength{\parskip}{0pt}
+\renewcommand{\headwidth}{\textwidth}
+\widowpenalty=10000
+\clubpenalty=10000
+\emergencystretch=1.6em
+\raggedbottom
+\setcounter{tocdepth}{0}
+\setcounter{secnumdepth}{-2}
+
+% ------------------------------------------------ corps de texte
+\begin{document}
+\makeatletter
+\pagestyle{main}
+
+% ---- Couverture
+\coverpage
+
+% ---- Page de titre
+\pagenumbering{roman}
+\booktitlepage
+
+% ---- Épigraphe
+\epigraphpage
+
+% ---- Préface courte + (TdM insérée avant l'introduction)
+\input{content/front-preface.tex}
+
+% ---- Table des matières
+\tocpage
+
+% ---- Corps
+\pagenumbering{arabic}
+\input{content/front.tex}      % Introduction
+\input{content/part1.tex}
+\input{content/part2.tex}
+\input{content/part3.tex}
+\input{content/part4.tex}
+\input{content/part5.tex}
+\input{content/back.tex}       % Conclusion, Dix questions, Épilogue, Bibliographie
+
+\makeatother
+\end{document}
